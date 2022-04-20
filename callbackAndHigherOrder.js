@@ -66,9 +66,7 @@ function last(array, fn) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// last(names, lastName => {
-//   console.log('The last name in names is ' + lastName)
-// })
+// 
 
 
 ////////// PROBLEM 4 //////////
@@ -112,7 +110,17 @@ function contains(array, name, fn) {
 */
 
 // CODE HERE
+function uniq(array, fn) {
 
+  for(let i = 0; i < array.length; i++){
+    for(let j = i + 1; j < array.length; j++){
+      if(array[i] === array[j]){
+        newNames = array.splice(array[i], 1)
+      }
+    }
+  }
+  return fn(array)
+}
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
   The callback function should take in one parameter called uniqArr.
@@ -121,7 +129,9 @@ function contains(array, name, fn) {
 */
 
 // CODE HERE
-
+uniq(names, uniqArr => {
+    console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
+  })
 
 
 ////////// PROBLEM 6 //////////
