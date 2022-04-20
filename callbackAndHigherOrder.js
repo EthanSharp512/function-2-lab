@@ -144,7 +144,9 @@ uniq(names, uniqArr => {
 // CODE HERE 
 
 function each(array, fn) {
-  fn(array[i])
+  for(let i = 0; i < array.length; i++) {
+    return fn(arr[i], i)
+  }
 }
 
 
@@ -156,7 +158,9 @@ function each(array, fn) {
 */
 
 // CODE HERE
-
+function callBack(index, item) {
+  console.log(`The item at index ${index} is ${item}`)
+}
 
 ////////// PROBLEM 7 //////////
 
@@ -189,7 +193,13 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
-
+function getUserById(array, id, fn) {
+  for (let i = 0; i < array.length; i++) {
+    if(users[i].id === id) {
+    fn(users[i])
+    }
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
