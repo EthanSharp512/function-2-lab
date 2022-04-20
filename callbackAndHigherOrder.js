@@ -19,7 +19,6 @@ multiply(4, 3, answer => {
 })
 
 
-
 ////////// PROBLEMS 2 - 6 //////////
 
 // The names array will be used in problems 2 - 6.
