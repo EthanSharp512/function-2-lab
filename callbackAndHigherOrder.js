@@ -45,9 +45,9 @@ function first(array, fn) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-first(names, firstName => {
-  console.log('The first name in names is ' + firstName)
-})
+// first(names, firstName => {
+//   console.log('The first name in names is ' + firstName)
+// })
 
 
 ////////// PROBLEM 3 //////////
@@ -58,7 +58,9 @@ first(names, firstName => {
 */
 
 // CODE HERE
-
+function last(array, fn) {
+  return fn(array[array.length -1])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -67,7 +69,6 @@ first(names, firstName => {
 // last(names, lastName => {
 //   console.log('The last name in names is ' + lastName)
 // })
-
 
 
 ////////// PROBLEM 4 //////////
