@@ -81,7 +81,13 @@ function last(array, fn) {
 */
 
 // CODE HERE 
-
+function contains(array, name, fn) {
+  if(array.includes(name)) {
+    return fn(true)
+  } else {
+    return fn(false)
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
