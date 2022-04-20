@@ -115,11 +115,11 @@ function uniq(array, fn) {
   for(let i = 0; i < array.length; i++){
     for(let j = i + 1; j < array.length; j++){
       if(array[i] === array[j]){
-        newNames = array.splice(array[i], 1)
+        array.filter(fn(array[i]))
       }
     }
   }
-  return fn(array)
+  // return fn(array)
 }
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -142,6 +142,10 @@ uniq(names, uniqArr => {
 */
 
 // CODE HERE 
+
+function each(array, fn) {
+  fn(array[i])
+}
 
 
 /*
