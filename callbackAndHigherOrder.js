@@ -115,11 +115,13 @@ function uniq(array, fn) {
   for(let i = 0; i < array.length; i++){
     for(let j = i + 1; j < array.length; j++){
       if(array[i] === array[j]){
-        newNames = array.splice(array[i], 1)
+        array.splice(j, 1)
+        j--
       }
     }
   }
-  return fn(array)
+  
+  fn(array)
 }
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -129,7 +131,7 @@ function uniq(array, fn) {
 */
 
 // CODE HERE
-uniq(names, uniqArr => {
+uniq(names, (uniqArr) => {
     console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
   })
 
