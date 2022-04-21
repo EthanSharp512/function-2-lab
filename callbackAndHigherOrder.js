@@ -7,16 +7,16 @@
 
 // CODE HERE
 function multiply(num1, num2, fn) {
-  return num1 * num2
+  fn(num1 * num2)
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-multiply(4, 3, answer => {
-  console.log('The answer is ' + answer) //should console.log 12
-})
+// multiply(4, 3, answer => {
+//   console.log('The answer is ' + answer) //should console.log 12
+// })
 
 
 ////////// PROBLEMS 2 - 6 //////////
@@ -38,7 +38,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 
 // CODE HERE 
 function first(array, fn) {
-  return fn(array[0])
+  fn(array[0])
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -59,14 +59,17 @@ function first(array, fn) {
 
 // CODE HERE
 function last(array, fn) {
-  return fn(array[array.length -1])
+  fn(array[array.length -1])
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// 
+// last(names, lastName => {
+//   console.log('The last name in names is ' + lastName)
+// })
+
 
 
 ////////// PROBLEM 4 //////////
@@ -80,10 +83,10 @@ function last(array, fn) {
 
 // CODE HERE 
 function contains(array, name, fn) {
-  if(array.includes(name)) {
-    return fn(true)
+  if(fn(array.includes(name))) {
+    return true
   } else {
-    return fn(false)
+    return false
   }
 }
 
@@ -147,7 +150,7 @@ uniq(names, (uniqArr) => {
 
 function each(array, fn) {
   for(let i = 0; i < array.length; i++) {
-    return fn(arr[i], i)
+    fn(array[i], i)
   }
 }
 
@@ -160,9 +163,10 @@ function each(array, fn) {
 */
 
 // CODE HERE
-function callBack(index, item) {
+each(names, (item, index) => {
   console.log(`The item at index ${index} is ${item}`)
-}
+})
+
 
 ////////// PROBLEM 7 //////////
 
