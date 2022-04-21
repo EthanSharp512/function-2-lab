@@ -24,7 +24,7 @@ const evenNumbers = mixedNumbers.filter((element, index, wholeArray) => {
   }
 })
 
-
+// console.log(evenNumbers)
 
 ////////// PROBLEM 2 //////////
 
@@ -43,9 +43,12 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-// const postTaxPrices = prices.map();
+const postTaxPrices = prices.map((element, index, wholeArray) => {
+  return element * 1.07
+  
+});
 
-
+// console.log(postTaxPrices)
 
 ////////// PROBLEM 3 //////////
 
@@ -61,9 +64,9 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-// const totalPopulation = populations.reduce()
+const totalPopulation = populations.reduce((acc, curr, curIndex, wholeArray) => acc + curr)
 
-
+console.log(totalPopulation)
 
 ////////// PROBLEM 4 //////////
 
@@ -86,7 +89,9 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-// const myStrongest = monstersInYourPocket.filter()
+const myStrongest = monstersInYourPocket.filter((pocketMonster, index, wholeArray) => {
+  return pocketMonster.CP > 200
+})
 
 
 
@@ -128,5 +133,3 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 // CODE HERE
 const bobsTotal = purchases.filter((purchase) => purchase.owner === "Bob").reduce((acc, curr) => acc + curr.price, 0) 
-
-console.log(bobsTotal)
