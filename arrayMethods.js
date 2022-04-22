@@ -64,7 +64,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation = populations.reduce((acc, curr, curIndex, wholeArray) => acc + curr)
+const totalPopulation = populations.reduce((acc, curr, curIndex, wholeArray) => acc + curr, 0)
 
 console.log(totalPopulation)
 
@@ -89,10 +89,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest = monstersInYourPocket.filter((pocketMonster, index, wholeArray) => {
-  return pocketMonster.CP > 200
-})
-
+const myStrongest = monstersInYourPocket.filter((pocketMonster) => pocketMonster.CP > 200)
 
 
 ////////// PROBLEM 5 //////////
@@ -109,9 +106,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
-const totals = orders.map((element) => {
-  return element.price * (1 + element.tax)
-})
+const totals = orders.map((element) => 
+  element.price * (1 + element.tax)
+)
 
 // console.log(totals)
 
