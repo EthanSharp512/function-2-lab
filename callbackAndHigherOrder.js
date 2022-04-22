@@ -83,11 +83,7 @@ function last(array, fn) {
 
 // CODE HERE 
 function contains(array, name, fn) {
-  if(fn(array.includes(name))) {
-    return true
-  } else {
-    return false
-  }
+  fn(array.includes(name))
 }
 
 // UNCOMMENT THE FUNCTION CALL BELOW
@@ -123,7 +119,7 @@ function uniq(array, fn) {
       }
     }
   }
-  
+
   fn(array)
 }
 /*
@@ -134,7 +130,7 @@ function uniq(array, fn) {
 */
 
 // CODE HERE
-uniq(names, (uniqArr) => {
+uniq(names, uniqArr => {
     console.log(`The new names array with all the duplicate items removed is ${uniqArr}`)
   })
 
@@ -149,9 +145,7 @@ uniq(names, (uniqArr) => {
 // CODE HERE 
 
 function each(array, fn) {
-  for(let i = 0; i < array.length; i++) {
-    fn(array[i], i)
-  }
+  array.forEach(array => fn(array))
 }
 
 
@@ -211,9 +205,9 @@ function getUserById(array, id, fn) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
